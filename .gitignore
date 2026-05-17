@@ -1,0 +1,56 @@
+# ==========================================
+# 1. DATOS GEOSPACIALES Y PRODUCTOS (PESADOS)
+# ==========================================
+# Ignorar las bases de datos espaciales locales en entrada y salida
+data/*.gpkg
+data/*.shp
+data/*.dbf
+data/*.shx
+data/*.prj
+data/*.cpg
+output/*.gpkg
+output/*.shp
+output/*.dbf
+output/*.shx
+output/*.prj
+output/*.csv
+
+# Por si descargas rásters temporales (TIF) de las imágenes satelitales
+*.tif
+*.tiff
+
+# ==========================================
+# 2. ENTORNOS VIRTUALES (NUNCA SE SUBEN)
+# ==========================================
+# Si usas venv, conda, env o poetry
+.venv/
+venv/
+env/
+ENV/
+.conda/
+bin/
+lib/
+include/
+
+# ==========================================
+# 3. PYTHON (ARCHIVOS TEMPORALES Y CACHÉ)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# ==========================================
+# 4. JUPYTER NOTEBOOKS (ARCHIVOS TEMPORALES)
+# ==========================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ==========================================
+# 5. CONFIGURACIÓN DE VS CODE Y SISTEMA
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
