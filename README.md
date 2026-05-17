@@ -66,7 +66,8 @@ pip install -r requirements.txt
 
 Ejecutar el programa:
 
-```En la carpeta de notebook
+```
+En la carpeta de notebook
 celda por celda
 ```
 
