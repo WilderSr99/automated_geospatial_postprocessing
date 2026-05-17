@@ -12,17 +12,17 @@ Asignar viviendas detectadas a centros poblados cercanos, calcular centroides, a
 
 ## Entradas
 
-Los archivos de entrada se colocan en la carpeta `data/`:
+Los archivos de entrada:
 
 - `viviendas_detectadas.gpkg`: polígonos de viviendas detectadas.
 - `centros_poblados.gpkg`: puntos o polígonos de centros poblados con campo `UBIGEO`.
 - `area_interes.gpkg`: polígono opcional para recortar el área de trabajo.
 
-Las rutas se configuran en `src/config.py`.
+Las rutas se configuran en segun la ruta local
 
 ## Proceso
 
-El programa principal `src/main.py` realiza los siguientes pasos:
+El programa principal realiza los siguientes pasos:
 
 1. Carga las viviendas detectadas.
 2. Carga los centros poblados.
@@ -30,18 +30,17 @@ El programa principal `src/main.py` realiza los siguientes pasos:
 4. Valida que las capas tengan CRS.
 5. Reproyecta las capas a un CRS métrico.
 6. Recorta viviendas dentro del área de interés.
-7. Regulariza bordes usando `minimum_rotated_rectangle`.
-8. Calcula centroides de las viviendas.
-9. Asigna cada vivienda al centro poblado más cercano con `sjoin_nearest`.
-10. Agrupa viviendas por `UBIGEO`.
-11. Calcula el total de viviendas por `UBIGEO`.
-12. Genera Árboles de Expansión Mínima por grupo cuando hay dos o más viviendas.
-13. Genera buffers simples por grupo.
-14. Exporta resultados en GeoPackage y CSV.
+7. Calcula centroides de las viviendas.
+8. Asigna cada vivienda al centro poblado más cercano con `sjoin_nearest`.
+9. Agrupa viviendas por `UBIGEO`.
+10. Calcula el total de viviendas por `UBIGEO`.
+11. Genera Árboles de Expansión Mínima por grupo cuando hay dos o más viviendas.
+12. Genera buffers simples por grupo.
+13. Exporta resultados en GeoPackage y CSV.
 
 ## Salidas
 
-Los resultados se guardan en la carpeta `output/`:
+Los resultados :
 
 - `resultados_postproceso.gpkg`
   - `viviendas_asignadas`
@@ -95,36 +94,17 @@ El proyecto demuestra conceptos de Fundamentos de Programación I:
 
 ```text
 proyecto_postproceso_geoespacial/
-├── data/
-│   ├── viviendas_detectadas.gpkg
-│   ├── centros_poblados.gpkg
-│   └── area_interes.gpkg
+|
 ├── notebooks/
-│   ├── centroides.ipynb
-│   ├── Metodos_de_poligonos.ipynb
-│   └── recorte_AOI.ipynb
-├── src/
-│   ├── main.py
-│   ├── interfaz.py
-│   ├── config.py
-│   ├── io_utils.py
-│   ├── bordes.py
-│   ├── centroides.py
-│   ├── asignacion_ubigeo.py
-│   ├── mst.py
-│   ├── voronoi.py
-│   ├── poligonos.py
-│   └── estadisticas.py
+│   ├── Flujo_delimitacion.ipynb
+│   
+|
 ├── output/
+|   ├── Poligonos de viviendas antes de asignacion UBIGEO.png
+|   ├── Poligonos de viviendas despues de asignacion UBIGEO.png
+|   ├── Puntos_georeferenciado.png
+|   ├── VORONOI.png
+|
 ├── requirements.txt
 └── README.md
-```
-
-## Comandos Git sugeridos
-
-```powershell
-git status
-git add README.md requirements.txt src
-git commit -m "Organiza pipeline geoespacial de postprocesamiento"
-git status
 ```
