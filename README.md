@@ -66,14 +66,8 @@ pip install -r requirements.txt
 
 Ejecutar el programa:
 
-```powershell
-python src\main.py
-```
-
-Ejecutar la interfaz simple:
-
-```powershell
-python src\interfaz.py
+```En la carpeta de notebook
+celda por celda
 ```
 
 ## Estructuras de programación usadas
