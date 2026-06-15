@@ -53,7 +53,7 @@ El proceso central está estructurado bajo las siguientes etapas algorítmicas s
 python -m venv .venv
 
 # Activar el entorno virtual (En Windows via PowerShell)
-.\.venv\Scripts\Activate.ps1
+ - .\.venv\Scripts\Activate.ps1
 
 ```text
 
